@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\motta\\dev\\dedatekk\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj": {}
+    "C:\\Users\\motta\\dev\\ddt\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\motta\\dev\\dedatekk\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj": {
+    "C:\\Users\\motta\\dev\\ddt\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\motta\\dev\\dedatekk\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj",
+        "projectUniqueName": "C:\\Users\\motta\\dev\\ddt\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj",
         "projectName": "Bloggie.Web",
-        "projectPath": "C:\\Users\\motta\\dev\\dedatekk\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj",
+        "projectPath": "C:\\Users\\motta\\dev\\ddt\\BloggieMVC\\Bloggie\\Bloggie.Web\\Bloggie.Web.csproj",
         "packagesPath": "C:\\Users\\motta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\motta\\dev\\dedatekk\\BloggieMVC\\Bloggie\\Bloggie.Web\\obj\\",
+        "outputPath": "C:\\Users\\motta\\dev\\ddt\\BloggieMVC\\Bloggie\\Bloggie.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\motta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
