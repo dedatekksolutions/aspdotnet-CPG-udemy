@@ -2,6 +2,7 @@
 using Bloggie.Web.Models.Domain;
 using Bloggie.Web.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 
 namespace Bloggie.Web.Controllers
 {
@@ -34,19 +35,68 @@ namespace Bloggie.Web.Controllers
 
             bloggieDbContext.Tags.Add(tag);
             bloggieDbContext.SaveChanges();
-            
+
             return RedirectToAction("List");
         }
 
         [HttpGet]
         [ActionName("List")]
-        public IActionResult List() {
+        public IActionResult List()
+        {
             //use dbContext to read the tags
 
             var tags = bloggieDbContext.Tags.ToList();
 
 
-        return View(tags);
+            return View(tags);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(Guid id)
+        {
+            //var tag = bloggieDbContext.Tags.Find(id);
+
+            var tag = bloggieDbContext.Tags.FirstOrDefault(x => x.Id == id);
+
+            if (tag != null)
+            {
+                var editTagRequest = new EditTagRequest { Id = tag.Id, Name = tag.Name, DisplayName = tag.DisplayName };
+
+
+                return View(editTagRequest);
+            }
+
+            return View(null);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditTagRequest editTagRequest) {
+            var tag = new Tag
+            {
+                Id = editTagRequest.Id,
+                Name = editTagRequest.Name,
+                DisplayName = editTagRequest.DisplayName
+            };
+
+            var existingTag = bloggieDbContext.Tags.Find(tag.Id);
+
+            if (existingTag != null)
+            {
+                existingTag.Name = tag.Name;
+                existingTag.DisplayName = tag.DisplayName;  
+
+                //save changes
+                bloggieDbContext.SaveChanges();
+
+                //show success notification
+                return RedirectToAction("Edit", new { id = editTagRequest.Id });
+            }
+            else
+            {
+                //show error notification
+                return RedirectToAction("Edit", new {id = editTagRequest.Id});
+            }
+
         }
     }
 }
